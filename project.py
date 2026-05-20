@@ -28,6 +28,7 @@ def check(n):
     return True
 
 
+# --- THESE LINES MUST BE ABOVE THE WHILE LOOP ---
 previous_result = 0        # store last result
 history_list = []          # store all results
 
@@ -41,28 +42,25 @@ while True:
 
     operator = input("enter operator: ")
 
-    # exit
+    # 1. MENU COMMANDS (Checked first)
     if operator == "q" or operator == "Q":
         print("exit")
         break
 
-    # show history
     if operator == "h":
         print("history:", history_list)
         continue
 
-    # clear history
     if operator == "c":
         history_list = []
         print("history cleared")
         continue
 
-    # if p is typed as operator
     if operator == "p":
         print("use p only when entering numbers")
         continue
 
-    # validate operator
+    # 2. VALIDATE OPERATORS
     if operator != "+" and operator != "-" and operator != "*" and operator != "%" and operator != "**":
         print("invalid operator")
         continue
